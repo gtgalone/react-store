@@ -20,7 +20,7 @@ $ npm install @gtgalone/react-store
 import React from 'react';
 
 import { StoreProvider, useStore } from '@gtgalone/react-store';
-// or const { useStore } = require('@gtgalone/react-store');
+// or const { StoreProvider, useStore } = require('@gtgalone/react-store');
 
 const App = () => {
   const { state, dispatchState } = useStore();
