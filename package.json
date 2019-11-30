@@ -1,5 +1,5 @@
 {
-	"name": "react-store",
+	"name": "@gtgalone/react-store",
 	"version": "0.0.1",
 	"description": "React Hook Store with useContext and useReducer",
 	"license": "MIT",
@@ -23,6 +23,7 @@
 		"esm"
 	],
 	"keywords": [
+		"@gtgalone/react-store",
 		"react-store",
 		"react-usestore",
 		"react-use-store",
