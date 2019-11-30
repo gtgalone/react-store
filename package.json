@@ -1,0 +1,50 @@
+{
+	"name": "react-store",
+	"version": "0.0.1",
+	"description": "React Hook Store with useContext and useReducer",
+	"license": "MIT",
+	"repository": "gtgalone/react-store",
+	"author": {
+		"name": "Jehun Seem",
+		"email": "jehunseem@gmail.com",
+		"url": "https://github.com/gtgalone"
+	},
+	"scripts": {
+		"build:cjs": "tsc",
+		"build:esm": "tsc -m esNext --outDir esm",
+		"build": "yarn build:cjs && yarn build:esm"
+	},
+	"main": "lib/index.js",
+	"module": "esm/index.js",
+	"types": "lib/index.d.ts",
+	"typings": "lib/index.d.ts",
+	"files": [
+		"lib",
+		"esm"
+	],
+	"keywords": [
+		"react-store",
+		"react-usestore",
+		"react-use-store",
+		"react-hook-store",
+		"react-hooks-store",
+		"use-store",
+		"hook-store",
+		"hooks-store",
+		"use-context",
+		"use-reducer"
+	],
+	"peerDependencies": {
+		"react": "^16.12.0"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.12",
+		"@types/react": "16.9.11",
+		"tslint": "5.20.1",
+		"tslint-config-prettier": "1.18.0",
+		"tslint-eslint-rules": "5.4.0",
+		"tslint-plugin-prettier": "2.0.1",
+		"tslint-react": "4.1.0",
+		"typescript": "3.7.2"
+	}
+}
