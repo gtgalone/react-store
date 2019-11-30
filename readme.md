@@ -25,14 +25,14 @@ import { StoreProvider, useStore } from '@gtgalone/react-store';
 const App = () => {
   const { state, dispatchState } = useStore();
 
-  console.log(state) // { count: 0 }
+  console.log(state); // { count: 0 }
 
   const increment = () => {
-    dispatchState({ name: 'count', value: state.count + 1 })
+    dispatchState({ name: 'count', value: state.count + 1 });
   };
 
   const decrement = () => {
-    dispatchState({ name: 'count', value: state.count - 1 })
+    dispatchState({ name: 'count', value: state.count - 1 });
   };
 
   return (
@@ -41,7 +41,7 @@ const App = () => {
       <button onClick={decrement}>decrement</button>
       <div>{state.count}</div>
     </div>
-  )
+  );
 };
 
 export default () => {
@@ -59,7 +59,7 @@ const App = () => {
   const { state, dispatchState } = useStore();
 
   const increment = () => {
-    dispatchState({ name: 'count', value: state.count + 1 })
+    dispatchState({ name: 'count', value: state.count + 1 });
   };
 
   // return with useMemo.
@@ -69,7 +69,7 @@ const App = () => {
       <button onClick={increment}>increment</button>
       <div>{state.count}</div>
     </div>
-  ), [state.count])
+  ), [state.count]);
 };
 ```
 ---
@@ -79,15 +79,15 @@ const App = () => {
   const { state, dispatch } = useStore();
 
   const increment = () => {
-    dispatch({ type: 'increment' })
+    dispatch({ type: 'increment' });
   };
 
   const decrement = () => {
-    dispatch({ type: 'decrement' })
+    dispatch({ type: 'decrement' });
   };
 
   const reset = () => {
-    dispatch({ type: 'reset', payload: 0 })
+    dispatch({ type: 'reset', payload: 0 });
   };
 
   return (
@@ -97,7 +97,7 @@ const App = () => {
       <button onClick={reset}>reset</button>
       <div>{state.count}</div>
     </div>
-  )
+  );
 };
 
 const reducer = (state, action) => {
