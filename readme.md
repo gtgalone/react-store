@@ -11,6 +11,8 @@ React Hook Store with useContext and useReducer.
 
 ```
 $ npm install @gtgalone/react-store
+or
+$ yarn add @gtgalone/react-store
 ```
 
 ## Usage
