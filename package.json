@@ -1,6 +1,6 @@
 {
 	"name": "@gtgalone/react-store",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "React Hook Store with useContext and useReducer",
 	"license": "MIT",
 	"repository": "gtgalone/react-store",
