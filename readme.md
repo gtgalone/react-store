@@ -1,6 +1,6 @@
 # react-store [![Build Status](https://travis-ci.org/gtgalone/react-store.svg?branch=master)](https://travis-ci.org/gtgalone/react-store)
 
-React Hook Store with useContext and useReducer.
+React Hook Store with useContext and useReducer for State Management.
 
 - Typescript support
 - Unopinionated
@@ -140,6 +140,11 @@ Type:\
 ### dispatch
 You can use this function for custom reducer with action.\
 Type: `({ type: 'action name', payload: 'any value' }) => void`
+
+## Recommend Libraries
+
+- [React Checklist](https://github.com/gtgalone/react-checklist) - Make Checkbox List Easy and Simple with React Hooks.
+- [React Quilljs](https://github.com/gtgalone/react-quilljs) - React Hook Wrapper for Quill(Rich Text Editor).
 
 ## Maintainer
 
