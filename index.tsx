@@ -21,11 +21,13 @@ export const reducer = (state, action) => {
 
 export const StoreContext = React.createContext<any>({});
 
-export const StoreProvider = <T extends {
-  children: React.ReactNode | React.ReactNode[] | null,
+export interface StoreProviderProps<T> {
   initialState: T,
   reducer?: T,
-}>(props) => {
+  children: React.ReactNode | React.ReactNode[] | null;
+}
+
+export const StoreProvider: React.FC<StoreProviderProps<any>> = (props) => {
 
   const reducer = React.useCallback((s, a) => {
     const { type, payload } = a;
