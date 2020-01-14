@@ -78,19 +78,25 @@ const App = () => {
 ---
 ### With Custom Reducer
 ```jsx
+const actions = {
+  INCREMENT: 'increment',
+  DECREMENT: 'decrement',
+  RESET: 'reset',
+}
+
 const App = () => {
   const { state, dispatch } = useStore();
 
   const increment = () => {
-    dispatch({ type: 'increment' });
+    dispatch({ type: actions.INCREMENT });
   };
 
   const decrement = () => {
-    dispatch({ type: 'decrement' });
+    dispatch({ type: actions.DECREMENT });
   };
 
   const reset = () => {
-    dispatch({ type: 'reset', payload: 0 });
+    dispatch({ type: actions.RESET, payload: 0 });
   };
 
   return (
@@ -105,11 +111,11 @@ const App = () => {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'increment':
+    case actions.INCREMENT:
       return { count: state.count + 1 };
-    case 'decrement':
+    case actions.DECREMENT:
       return { count: state.count - 1 };
-    case 'reset':
+    case actions.RESET:
       return { count: action.payload };
     default:
       throw new Error();
@@ -140,7 +146,8 @@ Type:\
 
 ### dispatch
 You can use this function for custom reducer with action.\
-Type: `({ type: 'action name', payload: 'any value' }) => void`
+Type: `({ type: 'action name', payload: 'any value' }) => void`\
+NOTE Allocated action: `actions.SET_STATE`
 
 ## Recommend Libraries
 

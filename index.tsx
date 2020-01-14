@@ -1,22 +1,7 @@
 import * as React from 'react';
 
-export const appActions = {
+export const actions = {
   SET_STATE: 'SET_STATE',
-  SET_STATES: 'SET_STATES',
-};
-
-export const reducer = (state, action) => {
-  const { type, payload } = action;
-  switch (type) {
-    case appActions.SET_STATE: return { [payload.name]: payload.value };
-    case appActions.SET_STATES:
-      const obj = {};
-      action.payload.map((v) => {
-        obj[v.name] = v.value;
-      });
-      return obj;
-    default: return state;
-  }
 };
 
 export const StoreContext = React.createContext<any>({});
@@ -32,17 +17,19 @@ export const StoreProvider: React.FC<StoreProviderProps<any>> = (props) => {
   const reducer = React.useCallback((s, a) => {
     const { type, payload } = a;
     switch (type) {
-      case appActions.SET_STATE:
-        return {
-          ...s,
-          [payload.name]: payload.value,
-        };
-      case appActions.SET_STATES:
-        const obj = { ...s };
-        a.payload.map((v) => {
-          obj[v.name] = v.value;
-        });
-        return obj;
+      case actions.SET_STATE:
+        if (payload instanceof Array) {
+          const obj = { ...s };
+          a.payload.map((v) => {
+            obj[v.name] = v.value;
+          });
+          return obj;
+        } else {
+          return {
+            ...s,
+            [payload.name]: payload.value,
+          };
+        }
       default: return props.reducer ? props.reducer(s, a) : s;
     }
   }, []);
@@ -60,8 +47,7 @@ export const useStore = () => {
   const { state, dispatch } = React.useContext(StoreContext);
 
   const dispatchState = React.useCallback((payload) => {
-    const type = payload instanceof Array ? appActions.SET_STATES : appActions.SET_STATE;
-    dispatch({ type, payload });
+    dispatch({ type: actions.SET_STATE, payload });
   }, []);
 
   return {
