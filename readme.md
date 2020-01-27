@@ -149,10 +149,12 @@ You can use this function for custom reducer with action.\
 Type: `({ type: 'action name', payload: 'any value' }) => void`\
 NOTE Allocated action: `actions.SET_STATE`
 
+---
 ## Recommend Libraries
 
 - [React Checklist](https://github.com/gtgalone/react-checklist) - Make Checkbox List Easy and Simple with React Hooks.
 - [React Quilljs](https://github.com/gtgalone/react-quilljs) - React Hook Wrapper for Quill(Rich Text Editor).
+- [Decode URI Component Charset](https://github.com/gtgalone/decode-uri-component-charset) - Decode URI Component with Charset such as 'euc-kr' without tears.
 
 ## Maintainer
 
