@@ -138,7 +138,8 @@ Type: `Object`
 
 ### dispatchState
 Built in dispatch function with universial states.\
-It is easy and simple. You don't need to make any extra reducer.\
+It is easy and simple.\
+You don't need to make any extra reducer.\
 Change single and multiple states with this function.\
 Type:\
 `({ name: 'state name', value: 'any value' }) => void`\
